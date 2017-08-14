@@ -29,7 +29,7 @@ main() {
   if [ ! $CHECK_ZSH_INSTALLED -ge 1 ]; then
     if [ -f /etc/debian_version ]; then
     printf "${YELLOW}Zsh is not installed!${NORMAL} Installation in progress\n"
-    	sudo apt-get install -y zsh
+    	sudo apt-get install -yq zsh
     else
     printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
 	exit
@@ -56,8 +56,12 @@ main() {
 
   printf "${BLUE}Cloning Oh My Zsh...${NORMAL}\n"
   hash git >/dev/null 2>&1 || {
-    echo "Error: git is not installed"
-    exit 1
+  if [ -f /etc/debian_version ]; then
+	sudo apt-get install -yq git 	
+  else
+	echo "Error: git is not installed"
+    	exit 1
+  fi
   }
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
