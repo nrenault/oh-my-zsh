@@ -84,3 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias web01="ssh noriade@web01.noriade.com"
+alias web02="ssh noriade@web02.noriade.com"
+alias web03="ssh noriade@web03.noriade.com"
+alias infra01="ssh noriade@infra01.noriade.com"
+alias admin="ssh noriade@admin.noriade.com"
+alias srv1="ssh root@srv1.noriade.com"
