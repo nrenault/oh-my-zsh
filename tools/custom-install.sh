@@ -81,9 +81,9 @@ main() {
 
   printf "${BLUE}Using the Oh My Zsh Custom template file and adding it to ~/.zshrc${NORMAL}\n"
   cp $ZSH/templates/zshrc.zsh-template ~/.zshrc
-  printf "${BLUE}Using the Oh My Zsh Custom Vimrc template file and adding it to ~/.zshrc${NORMAL}\n"
+  printf "${BLUE}Using the Oh My Zsh Custom Vimrc template file and adding it to ~/.gitconfig${NORMAL}\n"
   cp $ZSH/templates/gitconfig ~/.gitconfig
-  printf "${BLUE}Using the Oh My Zsh Custom Gitconfig template file and adding it to ~/.zshrc${NORMAL}\n"
+  printf "${BLUE}Using the Oh My Zsh Custom Gitconfig template file and adding it to ~/.vimrc${NORMAL}\n"
   cp $ZSH/templates/vimrc.template ~/.vimrc
   sed "/^export ZSH=/ c\\
   export ZSH=$ZSH
