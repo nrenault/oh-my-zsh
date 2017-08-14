@@ -27,9 +27,13 @@ main() {
 
   CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
   if [ ! $CHECK_ZSH_INSTALLED -ge 1 ]; then
+    if [ -f /etc/debian_version ]; then
+    printf "${YELLOW}Zsh is not installed!${NORMAL} Installation in progress\n"
+    	apt-get install -f zsh
+    else
     printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
-    #exit
-    apt-get install -f zsh
+	exit
+    fi
   fi
   unset CHECK_ZSH_INSTALLED
 
